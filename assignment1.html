@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+	<title> Assignment 1 </title>
+</head>
+<body>
+	<a-scene>
+		<a-assets> 
+			<img id = "bd_flag" src="images/bd_flag.png">
+			<img id = "prayer_mat" src="images/prayer_mat.jpg">
+			<img id = "village" src="images/village.jpg">
+		</a-assets>
+
+		<a-assets>
+			<!-- Tiger Model -->
+			<a-asset-item id = "tiger" src = "models/tiger.gltf"></a-assets-item>
+
+			<!-- Cricket Bat Model -->
+			<a-asset-item id = "cricBat" src = "models/cricket/cricketBat/cricketBat.mtl"></a-asset-item>
+			<a-asset-item id = "cricketBat" src = "models/cricket/cricketBat/cricketBat.obj"></a-asset-item>
+
+			<!-- Cricket Ball Model -->
+			<a-asset-item id = "cricBall-mtl" src = "models/cricket/cricket_Ball/cricketBall.mtl"></a-asset-item>
+			<a-asset-item id = "cricBall-obj" src = "models/cricket/cricket_Ball/cricketBall.obj"></a-asset-item>
+		</a-assets>
+			<!-- Village Background -->
+			<a-sky src = "#village"></a-sky>
+
+			<!-- Bangladesh Flag -->
+			<a-cylinder position = "-0.80 2 -4" radius = "0.03" height = "4.5" color = "black" ></a-cylinder>
+			<a-box src = "#bd_flag" position = "0 3.5 -4" rotation = "0 0 0" width = "1.70" depth = ".05" 
+					animation__drift = "property: position; dur: 800; easing: easeOutSine; from: 0 3.5 -4; to: 0.05 3.6 -4; dir: alternate; loop: true;"></a-box>
+			<!-- Islamic Prayer Mat -->
+			<a-box src = "#prayer_mat" position = "0 0.2 -3" rotation = "90 0 40" width = "1" height = "2.5" depth = "0.05"></a-box>
+
+			<!-- Displaying the Tiger Model -->
+			<a-entity position = "5 2 -8" rotation = "-50 220 95" scale = "0.03 0.03 0.03" gltf-model = "#tiger"></a-entity>
+
+			<!-- Moving the Cricket Ball -->
+			<a-entity position = "2 2 -5" rotation = "0 0 0" scale = "0.1 0.1 0.1" obj-model = "obj: #cricBall-obj; mtl: #cricBall-mtl"
+					animation__bounce = "property: position; dur: 1000; easing: easeOutSine; from: -3 2 -5; to: 3 0.3 -6; dir: alternate; loop: true;"></a-entity>	
+
+			<!-- Moving the Cricket Bat-->
+			<a-entity position = "-3 1 -5" rotation = "-60 -30 300" scale = "0.05 0.05 0.05" obj-model= "obj: #cricketBat; mtl: #cricBat;"
+						animation__hit = "property: rotation; dur: 1000; easing: easeInSine; from: -60 -30 -400; to: -60 -90 -400; dir: alternate; loop: true;"></a-entity>
+	</a-scene>
+</body>
+</html>
