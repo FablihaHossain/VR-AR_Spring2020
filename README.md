@@ -2,4 +2,4 @@
 # Virtual and Augmented Reality with Professor Lee Stemkoski
 
 Assignment One: Joy Bangla
-A 3D Scene that represents my home county: Bangladesh
+* A 3D Scene that represents my home county: Bangladesh
