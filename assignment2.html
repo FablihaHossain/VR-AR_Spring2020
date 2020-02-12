@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Assignment Two </title>
+	<script src="js/aframe.min.js"></script>
+	<script src="js/aframe-ar.js"></script>
+	<script src="js/aframe-text-geometry-component.min.js"></script>
+</head>
+<body>
+	<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
+
+    <!-- Heart Eyes Emoji 3D Model -->
+	<a-assets>
+        <a-asset-item id = "heartEmoji" src = "models/heartEyes/heartEyesEmoji.gltf"></a-asset-item>
+ 	</a-assets>
+
+    <!-- Linkedin and Instagram Logos --> 
+ 	<a-assets>
+ 		<img id = "linkedin" src="images/linkedin.jpg">
+ 		<img id = "instagram" src="images/instagram.jpg">
+ 	</a-assets>
+
+    <!-- Halo Emoji Marker with 3D Model of Heart Eyes -->
+    <!-- Rotating Animation -->
+	<a-marker type = "pattern" url = "markers/innocent_emoji.patt" id = "innocent">
+        <a-entity position = "0 0 0" rotation = "-90 0 0" scale = "0.1 0.1 0.1" gltf-model = "#heartEmoji"
+        animation__rotate = "property: rotation; dur: 5000; easing: linear; dir:normal: from: -90 0 0; to: -90 360 0; loop: true;"></a-entity>
+    </a-marker>
+
+    <!-- Memoji Marker with 3D Text -->
+    <a-marker type = "pattern" url = "markers/memoji.patt" id = "memoji">
+    	<a-entity 
+            text-geometry="value: Fabliha;"
+            material="color: purple; repeat: 0.5 0.5;"
+            position = "0 0 0"
+            rotation=" -90 0 0"
+            animation__shift = "property: position; dur: 1000; easing: linear; from: 0 0 0; to: 1 0 0; loop:true;"
+        ></a-entity>
+        <a-box src = #linkedin position = "-1 -2 0" width = "1" height = "1" depth = "1"></a-box>
+
+    <!-- Linkedin Marker with a-link to my Linkedin (Only appears on the screen, but doesn't redirect) -->
+   </a-marker>
+      <a-marker type = "pattern" url = "markers/linkedin.patt" id = "linkedinMarker">
+            <a-entity rotation = "-90 0 0">
+                <a-link href ="https://www.linkedin.com/in/fablihahossain" title = "My linkedin" image = "#linkedin"></a-link>
+            </a-entity>
+      </a-marker>
+
+    <!-- Instagram Marker with a-link to my Instagram (Also appears on the screen, but doesn't redirect) -->
+      <a-marker type = "pattern" url = "markers/instagram.patt" id = "instagramMarker">
+            <a-entity rotation = "-90 0 0">
+                <a-link href ="https://www.instagram.com/fabliha27/?hl=en" title = "My Instagram" image = "#instagram"></a-link>
+            </a-entity>
+      </a-marker>
+
+      <!-- Camera Entitiy-->
+	 <a-entity camera></a-entity>
+	</a-scene>
+</body>
+</html>
