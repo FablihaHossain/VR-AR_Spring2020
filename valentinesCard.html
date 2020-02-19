@@ -21,46 +21,37 @@
         <a-asset-item id = "heart-mtl" src = "models/Heart/Heart.mtl"></a-asset-item>
  	</a-assets>
 
- 	<!-- Monkey Model and Broccoli Marker-->
- 	<a-marker type = "pattern" url = "markers/broccoli.patt">
-        <a-entity position = "0 0 0" rotation = "-90 0 0" scale = "5 5 5" gltf-model = "#monkey"></a-entity>
+ 	<!-- Monkey Model and Kanji Marker-->
+ 	<a-marker type = "pattern" url = "markers/kanji.patt">
+        <a-entity position = "0 0 0" rotation = "-90 0 0" scale = "5 5 5" gltf-model = "#monkey"></a-entity
+        animation__rotate = "property: rotation; dur: 1000; easing: easeInOutSine; dir:alternate; from: -90 0 -45; to: -90 0 45; loop:true;">
 	</a-marker>
 
-	<!-- Heart Model and Heart Marker-->
-	<a-marker type = "pattern" url = "markers/heart.patt">
+	<!-- Heart Model and Innocent_Emoji Marker-->
+	<a-marker type = "pattern" url = "markers/innocent_emoji.patt">
 		<a-entity position = "0 0 1" rotation = "-180 0 0" scale = "0.1 0.1 0.1" obj-model = "obj: #heart-obj; mtl: #heart-mtl"
  		animation__rotate = "property: rotation; dur: 1000; easing: easeInOutSine; dir:alternate; from: -180 0 -45; to: -180 0 45; loop: true;"></a-entity>
 	</a-marker>
 
+	<!-- 3D Model of Heart Eyes and Star Marker -->
+	<a-marker type = "pattern" url = "markers/star.patt" id = "innocent">
+        <a-entity position = "0 0 0" rotation = "-90 0 0" scale = "0.1 0.1 0.1" gltf-model = "#heartEmoji"
+        animation__rotate = "property: rotation; dur: 5000; easing: linear; dir:normal: from: -90 0 0; to: -90 360 0; loop: true;"></a-entity>
+    </a-marker>
+
 	<!-- Text with Hiro Marker-->
 	<a-marker type = "pattern" url = "markers/hiro.patt">
 		<a-entity 
-            text-geometry="value: For a Goodle Surprise... Open!;"
+            text-geometry="value: Goodle Surprise...;"
             material="color: purple; repeat: 0.5 0.5;"
-            scale = "1 1 1"
+            scale = "0.5 0.5 0.5"
             position = "0 0 0"
             rotation=" -90 0 0"
-            animation__shift = "property: position; dur: 5000; easing: linear; dir: alternate; from: -4 0 0; to: -1 0 0; loop:true;"
+            animation__shift = "property: position; dur: 3500; easing: linear; dir: alternate; from: -3 -1 0; to: 0 1 4; loop:true;"
         ></a-entity>
+
 	</a-marker>
-
-
-
-
-<!-- 			<a-marker type = "pattern" src = "markers/hiro.patt">
-				<a-sphere position = "0 0 0" rotation = "0 0 0" color = "violet"></a-sphere>
-
-				<a-entity position = "0 0 0" rotation = "0 0 0" scale = "0.1 0.1 0.1" obj-model = "obj:#heart-obj; mtl:#heart-mtl">
-				</a-entity>
-			</a-marker> -->
-
-			<!--         <a-entity position = "0 0 0" rotation = "-90 0 0" scale = "0.1 0.1 0.1" gltf-model = "#heartEmoji"
-        animation__rotate = "property: rotation; dur: 5000; easing: linear; dir:normal: from: -90 0 0; to: -90 360 0; loop: true;"></a-entity> -->
-	 	
 		 	<a-entity camera></a-entity>
 		</a-scene>
-
-
-
 </body>
 </html>
