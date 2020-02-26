@@ -9,15 +9,12 @@
 </head>
 <body>
 
-	<div>
-		<button id="get-location"> Get My Location </button>
-	</div>
 	<script type="text/javascript">
 		let latitude = document.getElementById("latitude");
 		let longitude = document.getElementById("longitude");
 		let button = document.getElementById("get-location");
 
-		button.addEventListener("click", getLocation);
+		//button.addEventListener("click", getLocation);
 		function getLocation()
 		{
 			navigator.geolocation.getCurrentPosition(function(position)
@@ -49,15 +46,18 @@
 		});
 
 </script>
+<!-- 	<div>
+		<button id="get-location"> Get My Location </button>
+	</div> -->
 
  	<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;" visuals>
         <a-entity 
-        	gps-entity-place = "latitude: 40.7209115; longitude:-73.6516777; "
+        	gps-entity-place = "latitude:40.7209115; longitude:-73.6516777;"
             text-geometry="value: Test Area 1;"
             material="color: purple; repeat: 0.5 0.5;"
             position = "-2 0 -5"
             rotation="0 0 0"
-            scale = "1 1 1"
+            scale = "5 5 5"
         ></a-entity>
 
       <!-- Camera Entitiy -->
