@@ -50,8 +50,9 @@
 		<button id="get-location"> Get My Location </button>
 	</div> -->
 
- 	<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;" visuals>
+ 	<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
         <a-entity 
+        	visuals
         	gps-entity-place = "latitude:40.7213193; longitude:-73.65375999999999;"
             text-geometry="value: Test Area 1;"
             material="color: purple; repeat: 0.5 0.5;"
