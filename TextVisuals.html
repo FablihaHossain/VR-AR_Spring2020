@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Text Visuals </title>
+	<script src="js/aframe.min.js"></script>
+	<script src="js/aframe-ar.js"></script>
+	<script src="js/aframe-text-geometry-component.min.js"></script>
+	<script type="js/leaflet.js"></script>
+</head>
+<body>
+
+	<div>
+		<button id="get-location"> Get My Location </button>
+	</div>
+	<script type="text/javascript">
+		let latitude = document.getElementById("latitude");
+		let longitude = document.getElementById("longitude");
+		let button = document.getElementById("get-location");
+
+		button.addEventListener("click", getLocation);
+		function getLocation()
+		{
+			navigator.geolocation.getCurrentPosition(function(position)
+			{
+				// Getting the positions of the 
+				let lat = position.coords.latitude;
+				let long = position.coords.longitude;
+
+				latitude  = lat;
+				longitude = long;
+			});
+			console.log("Running");
+
+			console.log("Lat: " + latitude);
+			console.log("Long: " + longitude);
+		}
+
+		AFRAME.registerComponent('visuals', 
+		{
+			init:function(text)
+			{
+				// Calling the get location function
+				getLocation()
+
+				console.log("Text: " + text);
+				console.log("Latitude: " + latitude);
+				console.log("Longitude: " + longitude);
+			}
+		});
+
+</script>
+
+ 	<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;" visuals>
+        <a-entity 
+        	gps-entity-place = "latitude: 40.7209115; longitude:-73.6516777; "
+            text-geometry="value: Test Area 1;"
+            material="color: purple; repeat: 0.5 0.5;"
+            position = "-2 0 -5"
+            rotation="0 0 0"
+            scale = "1 1 1"
+        ></a-entity>
+
+      <!-- Camera Entitiy -->
+	 <a-camera gps-camera rotation-reader></a-camera>
+	</a-scene>
+</body>
+</html>
