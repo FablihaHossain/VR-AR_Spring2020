@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+	  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+	  <script type="js/aframe-master.js"></script>
+	  <script type="js/aframe-tooltip-component.js"></script>
+	  <script type="js/camera-position.js"></script>
+	  <script type="js/ground.js"></script>
+	  <script type="js/link-controls.js"></script>
+	  <script type="js/LegacyJSONLoader.js"></script>
+	<title> Second Environment </title>
+	<meta name="description" content="Motion Capture Components – A-Frame">
+</head>
+<body>
+	<a-scene raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" camera-position>
+		<a-assets>
+			<img id="thumbCity" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/thumbs/city.png">
+		</a-assets>
+		<a-entity environment = "preset: arches;"></a-entity>
+
+		<a-link href = "environment.html" position = "0 1.5 -1.0" image = "#thumbCity"></a-link>
+	  <a-entity id="leftHand" link-controls="hand: left"></a-entity>
+      <a-entity id="rightHand" link-controls="hand: right"></a-entity>
+	</a-scene>
+</body>
+</html>
