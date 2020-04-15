@@ -8,13 +8,15 @@
 	<script type="js/leaflet.js"></script>
 </head>
 <body>
-
+	<div>
+		<button id="get-location"> Get My Location </button>
+	</div>
 	<script type="text/javascript">
 		let latitude = document.getElementById("latitude");
 		let longitude = document.getElementById("longitude");
 		let button = document.getElementById("get-location");
 
-		//button.addEventListener("click", getLocation);
+		button.addEventListener("click", getLocation);
 		function getLocation()
 		{
 			navigator.geolocation.getCurrentPosition(function(position)
@@ -46,14 +48,11 @@
 		});
 
 </script>
-<!-- 	<div>
-		<button id="get-location"> Get My Location </button>
-	</div> -->
 
  	<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
         <a-entity 
         	visuals
-        	gps-entity-place = "latitude:40.7213193; longitude:-73.65375999999999;"
+        	gps-entity-place = "latitude:40.758966199999996; longitude:-73.3240799;"
             text-geometry="value: Test Area 1;"
             material="color: purple; repeat: 0.5 0.5;"
             position = "-2 0 -5"
