@@ -3,28 +3,24 @@
 <head>
 	  <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
 	  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-	  <script type="js/aframe-master.js"></script>
-	  <script type="js/aframe-tooltip-component.js"></script>
-	  <script type="js/camera-position.js"></script>
-	  <script type="js/ground.js"></script>
-	  <script type="js/link-controls.js"></script>
-	  <script type="js/LegacyJSONLoader.js"></script>
 	<title> Initial Environment </title>
 	<meta name="description" content="Motion Capture Components – A-Frame">
+
 </head>
 <body>
-	<a-scene raycaster="far: 100; objects: [link];" cursor="rayOrigin: mouse" camera-position>
+	<a-scene>
+		<!-- Loading an Image for Link Element-->
 		<a-assets>
-			<img id="arena" crossOrigin="anonymous" src="https://cdn.aframe.io/link-traversal/aframeArena.png">
+			<img id= "archesImage" crossOrigin="anonymous" src="images/arches.jpg">
 		</a-assets>
+
+		<!-- Setting up a Forest Environment-->
 		<a-entity environment = "preset: forest;"></a-entity>
 
-<!-- 		<a-link href = "secondEnvironment.html" title = "Arches"></a-link>
- -->	
-<!--  <a-entity laser-controls></a-entity>
- --> 		<a-link href = "secondEnvironment.html" position="0 1.5 -1.0" image = "#arena"></a-link>
-       <a-entity id="leftHand" link-controls="hand: left"></a-entity>
-      <a-entity id="rightHand" link-controls="hand: right"></a-entity>
+		<!-- Adding the Link Element and pointing it to the 2nd Environment-->
+		<a-link href = "secondEnvironment.html" position="0 1.5 -3.0" image = "#archesImage" cursor = pointer></a-link>
 	</a-scene>
 </body>
 </html>
+
+<!-- Credit to https://aframe.io/aframe/examples/showcase/link-traversal/-->
