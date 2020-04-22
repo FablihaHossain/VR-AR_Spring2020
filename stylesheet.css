@@ -1,0 +1,42 @@
+/*.a-canvas {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.a-canvas.a-grab-cursor:hover {
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+canvas.a-canvas.a-mouse-cursor-hover:hover {
+  cursor: pointer;
+}*/
+
+.body-html{
+	font-family: Noto Sans, sans-serif;
+	background-color:skyblue;
+	margin:0px;
+	padding: 0px;
+	color: black;
+}
+
+.body-size {
+    height: auto;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    align-content: center;
+}
+
+.words{
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.description{
+	font-size: 1rem; 
+}
