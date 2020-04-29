@@ -13,3 +13,6 @@ Group Assignment: Valentines Day Card
 
 Text Visuals
 * Displaying text at a specified location given geographical coordinates
+
+Link Traversals
+* Allowing users to click on the scene and be transported to another page with content
