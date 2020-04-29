@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Patrick's Story Pt2 </title>
+
+	<script src="js/aframe-master.1.0.4.min.js"></script>
+	<script src="js/aframe-environment-component.min.js"></script>
+	<script src="js/link-controls.js"></script>
+	<script src="js/aframe-text-geometry-component.min.js"></script>
+</head>
+<body>
+	<a-scene cursor="rayOrigin: mouse;" raycaster="far: 100; objects: [link];">
+		<a-entity 
+            text-geometry="value: There Was An Ugly Barnacle;"
+            material="color: green; repeat: 0.5 0.5;"
+            position = "-3 3 -2.5"
+            rotation="0 0 0"
+            scale = "0.7 0.7 0.7"
+        ></a-entity>
+
+		<!-- Loading an Image for Link Element-->
+		<a-assets>
+			<img id="checkerBoardImage" crossOrigin="anonymous" src="images/checkerboard.jpg">
+			<img id="forestImage" crossOrigin="anonymous" src="images/forest.jpg">
+		</a-assets>
+
+		<!-- Setting up a Arches Environment-->
+		<a-entity environment = "preset: arches;"></a-entity>
+
+		<!-- Adding the Link Element and pointing it to the 3rd Environment-->
+		<a-link href = "patrick_story_pt3.html" title = "Next Part" position = "0 1.5 -3.0" image = "#checkerBoardImage"></a-link>
+	</a-scene>
+</body>
+</html>
+
+<!-- Credit to Lee Stemkoski at https://github.com/stemkoski/A-Frame-Examples-->
+<!-- Credit to https://aframe.io/aframe/examples/showcase/link-traversal/-->
