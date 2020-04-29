@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Choose Path </title>
+
+	<script src="js/aframe-master.1.0.4.min.js"></script>
+	<script src="js/aframe-environment-component.min.js"></script>
+	<script src="js/link-controls.js"></script>
+	<script src="js/aframe-text-geometry-component.min.js"></script>
+</head>
+<body>
+	<a-scene cursor="rayOrigin: mouse;" raycaster="far: 100; objects: [link];">
+		<a-entity 
+            text-geometry="value: Choose A Path...;"
+            material="color: purple; repeat: 0.5 0.5;"
+            position = "-2.5 3 -2.5"
+            rotation="0 0 0"
+            scale = "1 1 1"
+        ></a-entity>
+
+		<!-- Loading an Image for Link Element-->
+		<a-assets>
+			<img id= "archesImage" crossOrigin="anonymous" src="images/arches.jpg">
+			<img id="checkerBoardImage" crossOrigin="anonymous" src="images/checkerboard.jpg">
+		</a-assets>
+
+		<!-- Setting up a Forest Environment-->
+		<a-entity environment = "preset: default;"></a-entity>
+
+		<!-- Adding the Link Element and pointing it to the Patrick's Story-->
+		<a-link href = "patrick_story_pt1.html" title = "Story by Patrick Star" position = "-2.0 1.5 -3.0" image = "#archesImage">
+		</a-link>
+
+		<!-- Adding the Link Element and pointing it to the Love Haiku-->
+		<a-link href = "patrick_poem_pt1.html" title = "A Poem by Patrick Star" position="2.0 1.5 -3.0" image = "#checkerBoardImage">
+		</a-link>
+	</a-scene>
+</body>
+</html>
