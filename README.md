@@ -16,3 +16,4 @@ Text Visuals
 
 Link Traversals
 * Allowing users to click on the scene and be transported to another page with content
+* Two Paths (Inspired by Spongebob)
