@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Patrick Poem Pt1 </title>
+
+	<script src="js/aframe-master.1.0.4.min.js"></script>
+	<script src="js/aframe-environment-component.min.js"></script>
+	<script src="js/link-controls.js"></script>
+	<script src="js/aframe-text-geometry-component.min.js"></script>
+</head>
+<body>
+	<a-scene cursor="rayOrigin: mouse;" raycaster="far: 100; objects: [link];">
+		<a-entity 
+            text-geometry="value: Roses Are Blue...;"
+            material="color: red; repeat: 0.5 0.5;"
+            position = "-2.5 3 -2.5"
+            rotation="0 0 0"
+            scale = "1 1 1"
+        ></a-entity>
+
+        <!-- Loading an Image for Link Element-->
+        <a-assets>
+			<img id= "archesImage" crossOrigin="anonymous" src="images/arches.jpg">
+		</a-assets>
+
+		<!-- Setting up a Forest Environment-->
+		<a-entity environment = "preset: forest;"></a-entity>
+
+		<!-- Adding the Link Element and pointing it to the 2nd Part of Haiku-->
+		<a-link href = "patrick_poem_pt2.html" title = "Continue Poem" position= "0 1.5 -3.0" image = "#archesImage"></a-link>
+
+	</a-scene>
+</body>
